@@ -8,8 +8,6 @@ buildscript {
     ext.multidex_version = "2.0.1"
     ext.fragment_version = "1.3.6"
     ext.coroutine_version="1.5.1-native-mt"
-    ext.firebase_bg="1.5.1-native-mt"
-    ext.coil_version="1.3.2"
     ext.gson_version="2.9.0"
     ext.inspector_version= '5.0.0-alpha.2'
     repositories {
