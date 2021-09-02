@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="34dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/query_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/dark_grey"
+            android:contentDescription="@string/img_desc"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sender_profile_Name"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="@color/dark_grey"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/query_img" />
+
+        <TextView
+            android:id="@+id/sender_name"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:background="@color/dark_grey"
+            android:fontFamily="@font/montserrat"
+            app:layout_constraintLeft_toRightOf="@id/sender_profile_Name"
+            app:layout_constraintTop_toTopOf="@id/sender_profile_Name" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/dark_grey"
+            android:drawablePadding="4dp"
+            app:layout_constraintLeft_toRightOf="@id/sender_profile_Name"
+            app:layout_constraintTop_toBottomOf="@id/sender_name" />
+
+        <TextView
+            android:id="@+id/query_title"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintLeft_toLeftOf="@id/sender_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sender_profile_Name" />
+
+        <TextView
+            android:id="@+id/receiver_profile_Name"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="@color/dark_grey"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/query_title" />
+
+
+        <TextView
+            android:id="@+id/receiver_name"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintLeft_toRightOf="@id/receiver_profile_Name"
+            app:layout_constraintTop_toTopOf="@id/receiver_profile_Name" />
+
+        <TextView
+            android:id="@+id/receiver_answer_title"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintLeft_toLeftOf="@id/receiver_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/receiver_profile_Name" />
+
+
+        <TextView
+            android:id="@+id/no_of_likes"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintRight_toRightOf="@id/receiver_answer_title"
+            app:layout_constraintTop_toBottomOf="@id/receiver_answer_title" />
+
+        <View
+            android:id="@+id/out_line_view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_margin="5dp"
+            android:background="@color/dark_grey"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/no_of_likes" />
+
+        <TextView
+            android:id="@+id/start_icon"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:background="@color/dark_grey"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/receiver_answer_title"
+            app:layout_constraintTop_toBottomOf="@id/out_line_view" />
+
+        <TextView
+            android:id="@+id/like_icon"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:background="@color/dark_grey"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/start_icon"
+            app:layout_constraintTop_toBottomOf="@id/out_line_view" />
+
+
+        <TextView
+            android:id="@+id/comment_icon"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:background="@color/dark_grey"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/like_icon"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/out_line_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
