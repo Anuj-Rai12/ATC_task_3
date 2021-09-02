@@ -73,9 +73,11 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$gson_version"
     //Lottie
     implementation 'com.airbnb.android:lottie:4.1.0'
-    //coil
+    //glide
     implementation "com.github.bumptech.glide:glide:$glid_version"
     kapt "com.github.bumptech.glide:compiler:$glid_version"
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
     //MultiDex
     implementation "androidx.multidex:multidex:$multidex_version"
     //Kotlin Coroutines
@@ -83,4 +85,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
     //Fragment
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    //Navigation Dependency
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 }

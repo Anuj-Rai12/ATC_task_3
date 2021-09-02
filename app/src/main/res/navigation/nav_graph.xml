@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/queryItemFragment">
+
+    <fragment
+        android:id="@+id/queryItemFragment"
+        android:name="com.example.cargo.ui.QueryItemFragment"
+        android:label="query_item_fragment"
+        tools:layout="@layout/query_item_fragment" >
+        <action
+            android:id="@+id/action_queryItemFragment_to_queryDetailFragment"
+            app:destination="@id/queryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/queryDetailFragment"
+        android:name="com.example.cargo.ui.QueryDetailFragment"
+        android:label="query_detail_fragment"
+        tools:layout="@layout/query_detail_fragment" />
+</navigation>
