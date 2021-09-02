@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_add.xml" value="0.175" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_comment.xml" value="0.18888888888888888" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_delete.xml" value="0.175" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_done.xml" value="0.24375" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_location.xml" value="0.18888888888888888" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_search.xml" value="0.18888888888888888" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_star.xml" value="0.18888888888888888" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/round_btn.xml" value="0.175" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/round_shape.xml" value="0.175" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/custom_dialog_fragment.xml" value="0.4" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/custom_dialog_fragragment.xml" value="0.4" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_item.xml" value="0.264" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_item_fragment.xml" value="0.4" />

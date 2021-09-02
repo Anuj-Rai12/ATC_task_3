@@ -14,4 +14,6 @@
     <color name="app_btn_color">#5DCD81</color>
     <color name="grey">#B5ADAD</color>
     <color name="light_black">#343434</color>
+    <color name="light_blue">#2A8CF3</color>
+    <color name="orange">#ED5F19</color>
 </resources>
