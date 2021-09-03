@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.QueryItemFragment">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -18,7 +19,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways">
+                android:paddingBottom="8dp">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar_layout_all"
@@ -29,11 +30,11 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="40dp"
+                        android:layout_width="38dp"
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:elevation="10dp"
-                        android:padding="5dp"
+                        android:padding="8dp"
                         app:cardCornerRadius="100dp">
 
                         <ImageView
@@ -48,26 +49,26 @@
 
                     <ImageView
                         android:id="@+id/location_click"
-                        android:layout_width="40dp"
+                        android:layout_width="38dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/round_shape"
                         android:contentDescription="@string/add_location"
-                        android:padding="5dp"
+                        android:padding="8dp"
                         android:src="@drawable/ic_location" />
 
                     <ImageView
                         android:id="@+id/search_click"
-                        android:layout_width="40dp"
+                        android:layout_width="38dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/round_shape"
                         android:contentDescription="@string/add_location"
-                        android:padding="5dp"
+                        android:padding="8dp"
                         android:src="@drawable/ic_search" />
 
                     <Button
@@ -75,14 +76,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:layout_margin="8dp"
+                        android:layout_margin="4dp"
                         android:background="@drawable/round_btn"
                         android:drawableLeft="@drawable/ic_add"
                         android:drawablePadding="4dp"
                         android:drawableTint="@color/white"
                         android:text="@string/post"
                         android:textColor="@color/white"
-                        app:backgroundTint="@color/app_btn_color"
+                        app:backgroundTint="@color/teal_200"
                         app:boxStrokeWidthFocused="4dp" />
 
                 </androidx.appcompat.widget.Toolbar>
@@ -94,9 +95,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/app_color"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:orientation="vertical" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

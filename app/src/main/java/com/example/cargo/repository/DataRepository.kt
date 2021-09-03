@@ -68,7 +68,7 @@ class DataRepository @Inject constructor() {
                 time = "${rand(45)} min ago ",
                 queryComment = listOf(
                     getFakeQueryComment(
-                        "Abhishek Kumar Kushwaha \n",
+                        "Abhishek Kushwaha",
                         "Good TIme Matters"
                     ),
                     getFakeQueryComment(
@@ -86,7 +86,7 @@ class DataRepository @Inject constructor() {
                 time = "${rand(45)} min ago ",
                 queryComment = listOf(
                     getFakeQueryComment(
-                        "Abhishek Kumar Kushwaha \n",
+                        "Pranam Patel",
                         "This is the reality of present day generations. Most of are sharing the facts without checking the authenticity. They just want to make it"
                     ),
                     getFakeQueryComment(

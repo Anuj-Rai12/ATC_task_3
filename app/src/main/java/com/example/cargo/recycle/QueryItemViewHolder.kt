@@ -32,6 +32,7 @@ class QueryItemViewHolder(private val binding: QueryItemBinding) :
     @SuppressLint("SetTextI18n")
     fun bindIt(query: Query, itemClicked: (Query) -> Unit, context: Context) {
         binding.root.setOnClickListener {
+            query.localBitmap=bitmap
             itemClicked(query)
         }
         if (query.queryImage == null) {
