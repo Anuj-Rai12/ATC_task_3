@@ -29,23 +29,11 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.cardview.widget.CardView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="38dp"
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
-                        android:elevation="10dp"
-                        android:padding="8dp"
-                        app:cardCornerRadius="100dp">
-
-                        <ImageView
-                            android:id="@+id/roundedImageView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/white"
-                            android:contentDescription="@string/pro_pic"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/myimage" />
-                    </androidx.cardview.widget.CardView>
+                        android:src="@drawable/myimage" />
 
                     <ImageView
                         android:id="@+id/location_click"
