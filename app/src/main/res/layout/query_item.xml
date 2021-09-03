@@ -46,7 +46,7 @@
 
         <TextView
             android:id="@+id/sender_profile_Name"
-            android:layout_width="53dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@drawable/round_btn"
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:padding="8dp"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/query_img"
@@ -111,7 +111,7 @@
             android:gravity="center"
             android:padding="8dp"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/query_title"

@@ -18,5 +18,9 @@
         android:id="@+id/queryDetailFragment"
         android:name="com.example.cargo.ui.QueryDetailFragment"
         android:label="query_detail_fragment"
-        tools:layout="@layout/query_detail_fragment" />
+        tools:layout="@layout/query_detail_fragment" >
+        <argument
+            android:name="query"
+            app:argType="com.example.cargo.data.Query" />
+    </fragment>
 </navigation>
