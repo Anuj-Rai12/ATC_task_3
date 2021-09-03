@@ -15,7 +15,7 @@ class QueryItemAdaptor(private val context: Context,private val itemClicked: (Qu
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<Query>() {
             override fun areItemsTheSame(oldItem: Query, newItem: Query): Boolean {
-                return oldItem.queryTxt == newItem.queryTxt
+                return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(oldItem: Query, newItem: Query): Boolean {
@@ -29,6 +29,7 @@ class QueryItemAdaptor(private val context: Context,private val itemClicked: (Qu
         return QueryItemViewHolder(binding)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: QueryItemViewHolder, position: Int) {
         val curr=getItem(position)
         curr?.let {

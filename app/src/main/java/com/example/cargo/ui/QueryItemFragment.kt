@@ -1,12 +1,14 @@
 package com.example.cargo.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cargo.R
+import com.example.cargo.TAG
 import com.example.cargo.databinding.QueryItemFragmentBinding
 import com.example.cargo.recycle.QueryItemAdaptor
 import com.example.cargo.utils.DialogBox
@@ -32,7 +34,7 @@ class QueryItemFragment : Fragment(R.layout.query_item_fragment) {
             layoutManager = LinearLayoutManager(requireContext())
             queryItemAdaptor = QueryItemAdaptor(requireActivity()) {
                 appViewModel.itemClickedData = it
-                findNavController().navigate(R.id.action_queryItemFragment_to_queryDetailFragment)
+                //findNavController().navigate(R.id.action_queryItemFragment_to_queryDetailFragment)
             }
             adapter=queryItemAdaptor
         }
