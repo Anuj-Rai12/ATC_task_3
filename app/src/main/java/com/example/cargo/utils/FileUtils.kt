@@ -1,7 +1,6 @@
 package com.example.cargo.utils
 
 import android.app.Activity
-import android.graphics.Color
 import android.os.Build
 import android.view.View
 import androidx.annotation.RequiresApi
@@ -16,14 +15,14 @@ fun rand(to: Int): Int {
 
 fun getRanColor(): Int {
     val colors = listOf(
-        Color.RED,
-        Color.BLUE,
-        Color.GREEN,
-        Color.BLACK,
-        Color.DKGRAY,
-        Color.YELLOW,
-        Color.LTGRAY,
-        Color.MAGENTA
+        R.color.app_btn_color,
+        R.color.grey,
+        R.color.app_color,
+        R.color.black,
+        R.color.orange,
+        R.color.light_blue,
+        R.color.purple_700,
+        R.color.teal_700
     )
     val position = rand(colors.size)
     return colors[position]

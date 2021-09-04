@@ -26,14 +26,14 @@ class QueryItemAdaptor(private val context: Context,private val itemClicked: (Qu
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QueryItemViewHolder {
         val binding= QueryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return QueryItemViewHolder(binding)
+        return QueryItemViewHolder(binding,context=context)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: QueryItemViewHolder, position: Int) {
         val curr=getItem(position)
         curr?.let {
-            holder.bindIt(query = it,itemClicked = itemClicked,context=context)
+            holder.bindIt(query = it,itemClicked = itemClicked)
         }
     }
 
