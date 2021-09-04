@@ -33,7 +33,7 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     compileSdkVersion 30
     buildToolsVersion '30.0.3'
@@ -55,37 +55,21 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     // Lifecycles only (without ViewModel or LiveData)
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    //Paging
-    //noinspection GradleDependency
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
     //hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
     //Android Activity KTX
     implementation "androidx.activity:activity-ktx:$activity_version"
-    //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    //Inspector
-    implementation "com.squareup.okhttp3:logging-interceptor:$inspector_version"
     //Android Activity KTX
     implementation "androidx.activity:activity-ktx:$activity_version"
     //Gson
     implementation "com.squareup.retrofit2:converter-gson:$gson_version"
-    //Lottie
-    implementation 'com.airbnb.android:lottie:4.1.0'
     //glide
     implementation "com.github.bumptech.glide:glide:$glid_version"
     kapt "com.github.bumptech.glide:compiler:$glid_version"
-    //Shimmer
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    //MultiDex
-    implementation "androidx.multidex:multidex:$multidex_version"
-    //Kotlin Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
     //Fragment
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
-    //Circlura Image View
+    //Circular Image View
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //Navigation Dependency
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")

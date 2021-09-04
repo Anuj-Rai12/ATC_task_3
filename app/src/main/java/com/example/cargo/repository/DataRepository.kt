@@ -69,7 +69,7 @@ class DataRepository @Inject constructor() {
                 queryComment = listOf(
                     getFakeQueryComment(
                         "Abhishek Kushwaha",
-                        "Good TIme Matters"
+                        "Good Time Matters"
                     ),
                     getFakeQueryComment(
                         "Adesh Patel",
