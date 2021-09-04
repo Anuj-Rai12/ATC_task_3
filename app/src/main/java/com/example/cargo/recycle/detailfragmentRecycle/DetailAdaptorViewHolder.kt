@@ -51,6 +51,7 @@ class DetailAdaptorViewHolder(
                 profileImage.show()
                 voiceImage.show()
                 myTextEdit.show()
+                myTextEdit.hint = getLikeOrAnswerVal(query)
             }
             myTextEdit.doOnTextChanged { _, _, _, count ->
                 if (count == 1 && seen1 == null) {

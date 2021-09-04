@@ -20,6 +20,7 @@ fun getRanColor(): Int {
         R.color.app_color,
         R.color.black,
         R.color.orange,
+        R.color.light_my_color,
         R.color.light_blue,
         R.color.purple_700,
         R.color.teal_700

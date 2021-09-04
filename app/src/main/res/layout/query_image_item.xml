@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/query_img"
@@ -28,6 +29,7 @@
         android:padding="8dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="100dp"
+        app:cardElevation="@null"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -43,12 +45,13 @@
         android:id="@+id/menu_btn_click"
         android:layout_width="33dp"
         android:layout_height="33dp"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="3dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="8dp"
         android:padding="8dp"
         app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="100dp"
+        app:cardElevation="@null"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
