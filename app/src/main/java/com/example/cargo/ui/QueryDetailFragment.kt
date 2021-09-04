@@ -3,6 +3,8 @@ package com.example.cargo.ui
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -20,6 +22,9 @@ class QueryDetailFragment : Fragment(R.layout.query_detail_fragment) {
     private lateinit var binding: QueryDetailFragmentBinding
     private val args: QueryDetailFragmentArgs by navArgs()
     private lateinit var detailAdaptor: DetailAdaptor
+    private val popExitAnim by lazy {
+        AnimationUtils.loadAnimation(activity, R.anim.pop_up_anim)
+    }
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,8 +38,15 @@ class QueryDetailFragment : Fragment(R.layout.query_detail_fragment) {
         }
         binding.selectedRecycle.apply {
             setHasFixedSize(true)
-            detailAdaptor = DetailAdaptor(requireActivity()){
-                findNavController().popBackStack()
+            detailAdaptor = DetailAdaptor(requireActivity()) {
+                this.startAnimation(popExitAnim)
+                popExitAnim.setAnimationListener(object : Animation.AnimationListener {
+                    override fun onAnimationStart(animation: Animation?) {}
+                    override fun onAnimationEnd(animation: Animation?) {
+                        findNavController().popBackStack()
+                    }
+                    override fun onAnimationRepeat(animation: Animation?) {}
+                })
             }
             adapter = detailAdaptor
         }
@@ -47,7 +59,6 @@ class QueryDetailFragment : Fragment(R.layout.query_detail_fragment) {
                 viewHolder: RecyclerView.ViewHolder,
                 target: RecyclerView.ViewHolder
             ) = false
-
 
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {

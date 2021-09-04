@@ -12,7 +12,8 @@
         tools:layout="@layout/query_item_fragment" >
         <action
             android:id="@+id/action_queryItemFragment_to_queryDetailFragment"
-            app:destination="@id/queryDetailFragment" />
+            app:destination="@id/queryDetailFragment"
+            app:enterAnim="@anim/pop_up_anim"/>
     </fragment>
     <fragment
         android:id="@+id/queryDetailFragment"
