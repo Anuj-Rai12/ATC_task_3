@@ -1,21 +1,15 @@
 package com.example.cargo.ui
 
-import android.graphics.Canvas
-import android.icu.lang.UCharacter.IndicPositionalCategory.TOP
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.DragEvent
 import android.view.View
 import androidx.annotation.RequiresApi
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cargo.R
-import com.example.cargo.TAG
 import com.example.cargo.databinding.QueryDetailFragmentBinding
 import com.example.cargo.recycle.detailfragmentRecycle.DetailAdaptor
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +33,9 @@ class QueryDetailFragment : Fragment(R.layout.query_detail_fragment) {
         }
         binding.selectedRecycle.apply {
             setHasFixedSize(true)
-            detailAdaptor = DetailAdaptor(requireActivity())
+            detailAdaptor = DetailAdaptor(requireActivity()){
+                findNavController().popBackStack()
+            }
             adapter = detailAdaptor
         }
         ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(

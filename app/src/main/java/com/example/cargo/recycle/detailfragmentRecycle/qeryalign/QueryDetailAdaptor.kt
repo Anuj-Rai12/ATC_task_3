@@ -13,7 +13,7 @@ import com.example.cargo.databinding.QueryCommentItemBinding
 import com.example.cargo.databinding.QueryImageItemBinding
 import com.example.cargo.databinding.QueyAskItemBinding
 
-class QueryDetailAdaptor constructor(private val context: Context) :
+class QueryDetailAdaptor constructor(private val context: Context, private val exit: () -> Unit) :
     ListAdapter<AllDataClass, AllViewHolder>(diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllViewHolder {
         return when (viewType) {
@@ -63,7 +63,7 @@ class QueryDetailAdaptor constructor(private val context: Context) :
             when (holder) {
                 is AllViewHolder.QueryAnswerType -> holder.bindIt(curr as AllDataClass.Replied)
                 is AllViewHolder.QueryAskQuestion -> holder.bindIt(curr as AllDataClass.Question)
-                is AllViewHolder.QueryImageViewHolder -> holder.bindIt(curr as AllDataClass.Images)
+                is AllViewHolder.QueryImageViewHolder -> holder.bindIt(curr as AllDataClass.Images,exit)
             }
         }
     }

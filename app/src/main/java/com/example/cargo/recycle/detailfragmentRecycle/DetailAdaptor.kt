@@ -9,7 +9,7 @@ import com.example.cargo.databinding.QueryDetailLayoutBinding
 import com.example.cargo.recycle.QueryItemAdaptor
 
 
-class DetailAdaptor(private val context: Context) :
+class DetailAdaptor(private val context: Context,private val exit:()->Unit) :
     ListAdapter<Query, DetailAdaptorViewHolder>(QueryItemAdaptor.diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailAdaptorViewHolder {
         val binding =
@@ -20,7 +20,7 @@ class DetailAdaptor(private val context: Context) :
     override fun onBindViewHolder(holder: DetailAdaptorViewHolder, position: Int) {
         val current = getItem(position)
         current?.let {
-            holder.bindIt(current)
+            holder.bindIt(current,exit)
         }
     }
 }

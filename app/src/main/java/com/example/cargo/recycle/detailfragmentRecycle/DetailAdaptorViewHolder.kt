@@ -35,12 +35,14 @@ class DetailAdaptorViewHolder(
         AnimationUtils.loadAnimation(context, R.anim.pop_exit_anim)
     }
 
-    fun bindIt(query: Query) {
+    fun bindIt(query: Query,exit:()->Unit) {
         binding.apply {
             myRecycleView.apply {
                 setHasFixedSize(true)
                 queryDetailAdaptor =
-                    QueryDetailAdaptor(context = this@DetailAdaptorViewHolder.context)
+                    QueryDetailAdaptor(context = this@DetailAdaptorViewHolder.context){
+                        exit()
+                    }
                 adapter = queryDetailAdaptor
             }
             getData(query)

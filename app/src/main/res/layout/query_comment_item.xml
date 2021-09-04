@@ -86,11 +86,11 @@
         <TextView
             android:id="@+id/like_comment_icon"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:textStyle="bold"
             android:layout_marginEnd="30dp"
-            android:drawablePadding="3dp"
             android:gravity="bottom"
+            android:drawablePadding="5dp"
             android:textColor="@color/black"
             app:drawableEndCompat="@drawable/ic_like"
             app:drawableTint="@color/dark_grey"

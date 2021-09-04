@@ -24,11 +24,14 @@ sealed class AllViewHolder(viewBinding: ViewBinding) :
     ) :
         AllViewHolder(binding) {
         @RequiresApi(Build.VERSION_CODES.M)
-        fun bindIt(query: AllDataClass.Images) {
+        fun bindIt(query: AllDataClass.Images, exit: () -> Unit) {
             if (query.bitmap != null) {
                 binding.queryImg.show()
                 changeBgColor(binding.closeBtnClick, R.color.black)
                 changeBgColor(binding.menuBtnClick, R.color.black)
+                binding.closeBtnClick.setOnClickListener {
+                    exit()
+                }
                 binding.queryImg.setImageBitmap(query.bitmap)
             } else {
                 binding.queryImg.hide()
