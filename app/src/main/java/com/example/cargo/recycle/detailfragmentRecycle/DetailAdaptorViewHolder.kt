@@ -55,8 +55,8 @@ class DetailAdaptorViewHolder(
                 myTextEdit.show()
                 myTextEdit.hint = getLikeOrAnswerVal(query)
             }
-            myTextEdit.doOnTextChanged { _, _, _, count ->
-                if (count == 1 && seen1 == null) {
+            myTextEdit.doOnTextChanged { text, _, _, _ ->
+                if (text?.length == 1 && seen1 == null) {
                     sendImage.show()
                     seen1 = true
                     seen2 = null
@@ -77,7 +77,7 @@ class DetailAdaptorViewHolder(
 
                         override fun onAnimationRepeat(animation: Animation?) {}
                     })
-                } else if (seen1 == true && seen2 == null && count == 0) {
+                } else if (seen1 == true && seen2 == null && text?.length == 0) {
                     seen2 = true
                     seen1 = null
                     sendImage.startAnimation(popExitAnim)
