@@ -11,9 +11,12 @@ import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cargo.R
 import com.example.cargo.TAG
+import com.example.cargo.data.AllDataClass
 import com.example.cargo.data.Query
 import com.example.cargo.databinding.QueryDetailLayoutBinding
+import com.example.cargo.recycle.detailfragmentRecycle.qeryalign.QueryDetailAdaptor
 import com.example.cargo.utils.hide
+import com.example.cargo.utils.rand
 import com.example.cargo.utils.show
 
 class DetailAdaptorViewHolder(
@@ -23,14 +26,25 @@ class DetailAdaptorViewHolder(
     RecyclerView.ViewHolder(binding.root) {
     private var seen1: Boolean? = null
     private var seen2: Boolean? = null
+    private lateinit var queryDetailAdaptor: QueryDetailAdaptor
+    private val dataItem = mutableListOf<AllDataClass>()
     private val enterAnim by lazy {
         AnimationUtils.loadAnimation(context, R.anim.enter_anim)
     }
     private val popExitAnim by lazy {
         AnimationUtils.loadAnimation(context, R.anim.pop_exit_anim)
     }
+
     fun bindIt(query: Query) {
         binding.apply {
+            myRecycleView.apply {
+                setHasFixedSize(true)
+                queryDetailAdaptor =
+                    QueryDetailAdaptor(context = this@DetailAdaptorViewHolder.context)
+                adapter = queryDetailAdaptor
+            }
+            getData(query)
+
             commentIconClick.text = getLikeOrAnswerVal(query)
             commentIconClick.setOnClickListener {
                 commentIconClick.hide()
@@ -83,6 +97,29 @@ class DetailAdaptorViewHolder(
                 }
             }
         }
+    }
+
+    private fun getData(query: Query) {
+        dataItem.add(AllDataClass.Images(bitmap = query.localBitmap, id = "Image.No ${rand(32)}"))
+        dataItem.add(
+            AllDataClass.Question(
+                question = query.queryTxt,
+                askedName = query.sender,
+                time = query.time,
+                likes = query.likes,
+                answer = query.answer
+            )
+        )
+        query.queryComment.forEach {
+            dataItem.add(
+                AllDataClass.Replied(
+                    repliedBy = it.receiver,
+                    time = it.time,
+                    statement = it.receiverAnswerTxt
+                )
+            )
+        }
+        queryDetailAdaptor.submitList(dataItem)
     }
 
     @SuppressLint("SetTextI18n")

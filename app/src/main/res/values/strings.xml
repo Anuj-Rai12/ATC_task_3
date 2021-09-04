@@ -16,4 +16,5 @@
     <string name="comment_text_1">Comment</string>
     <string name="start_text">Star</string>
     <string name="like_text">Like</string>
+    <string name="img_close">Close</string>
 </resources>

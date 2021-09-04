@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -12,7 +11,6 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -43,13 +41,13 @@ class QueryItemViewHolder(private val binding: QueryItemBinding, private val con
             binding.senderProfileName.updateLayoutParams<ConstraintLayout.LayoutParams> {
                 topToBottom = binding.menuIcon.id
             }
-            changeBgColor(binding.menuIcon, Color.TRANSPARENT)
+            changeBgColor(binding.menuIcon, R.color.white)
         } else {
             binding.queryImg.show()
             binding.senderProfileName.updateLayoutParams<ConstraintLayout.LayoutParams> {
                 topToBottom = binding.queryImg.id
             }
-            changeBgColor(binding.menuIcon, Color.BLACK)
+            changeBgColor(binding.menuIcon, R.color.black)
             Glide.with(context)
                 .asBitmap()
                 .placeholder(R.drawable.myimage)
@@ -75,11 +73,11 @@ class QueryItemViewHolder(private val binding: QueryItemBinding, private val con
         }
         binding.senderName.text = "${query.sender} . ${query.time}"
         binding.queryTitle.text = query.queryTxt
-        changeBgColor(binding.senderProfileName, getRanColor(),3)
+        changeBgColor(binding.senderProfileName, getRanColor())
         binding.roundedSenderTextView.text = query.sender.first().toString()
         query.queryComment.first().apply {
             binding.roundedReceiverTextView.text = receiver.first().toString()
-            changeBgColor(binding.receiverProfileName, getRanColor(),34)
+            changeBgColor(binding.receiverProfileName, getRanColor())
             binding.receiverAnswerTitle.text = receiverAnswerTxt
             binding.receiverName.text = "$receiver . $time"
         }
@@ -101,23 +99,15 @@ class QueryItemViewHolder(private val binding: QueryItemBinding, private val con
             }
         }
     }
+//    var buttonDrawable: Drawable? = senderProfileName.background
+//    buttonDrawable = DrawableCompat.wrap(buttonDrawable!!)
+//    DrawableCompat.setTint(buttonDrawable, color)
+//    senderProfileName.background = buttonDrawable
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun changeBgColor(senderProfileName: View, color: Int, choose: Int = 0) {
+    private fun changeBgColor(senderProfileName: View, color: Int) {
         val activity = context as Activity
-        when (choose) {
-            0 -> {
-                var buttonDrawable: Drawable? = senderProfileName.background
-                buttonDrawable = DrawableCompat.wrap(buttonDrawable!!)
-                DrawableCompat.setTint(buttonDrawable, color)
-                senderProfileName.background = buttonDrawable
-            }
-            else -> (senderProfileName as CardView).setCardBackgroundColor(
-                activity.setColor(
-                    getRanColor()
-                )
-            )
-        }
+        (senderProfileName as CardView).setCardBackgroundColor(activity.setColor(color))
     }
 }
 
