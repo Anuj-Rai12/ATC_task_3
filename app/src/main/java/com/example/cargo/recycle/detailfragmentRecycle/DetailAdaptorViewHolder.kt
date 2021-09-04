@@ -23,15 +23,13 @@ class DetailAdaptorViewHolder(
     RecyclerView.ViewHolder(binding.root) {
     private var seen1: Boolean? = null
     private var seen2: Boolean? = null
+    private val enterAnim by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.enter_anim)
+    }
+    private val popExitAnim by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.pop_exit_anim)
+    }
     fun bindIt(query: Query) {
-
-        val botTopAnim = AnimationUtils.loadAnimation(context, R.anim.bot_top_anim)
-        val enterAnim = AnimationUtils.loadAnimation(context, R.anim.enter_anim)
-        val exitAnim = AnimationUtils.loadAnimation(context, R.anim.exit_anim)
-        val popExitAnim = AnimationUtils.loadAnimation(context, R.anim.pop_exit_anim)
-        val popEnterAnim = AnimationUtils.loadAnimation(context, R.anim.pop_enter_anim)
-
-
         binding.apply {
             commentIconClick.text = getLikeOrAnswerVal(query)
             commentIconClick.setOnClickListener {
@@ -46,20 +44,18 @@ class DetailAdaptorViewHolder(
                     seen1 = true
                     seen2 = null
                     sendImage.startAnimation(enterAnim)
-                    profileImage.startAnimation(exitAnim)
-                    exitAnim.setAnimationListener(object : Animation.AnimationListener {
+                    enterAnim.setAnimationListener(object : Animation.AnimationListener {
                         override fun onAnimationStart(animation: Animation?) {
                             Log.i(TAG, "onAnimationStart: Started Animation")
+                            profileImage.hide()
                             myTextEdit.updateLayoutParams<ConstraintLayout.LayoutParams> {
                                 bottomToBottom = ConstraintLayout.LayoutParams.UNSET
                             }
+                            locationIc.show()
                         }
 
                         override fun onAnimationEnd(animation: Animation?) {
                             Log.i(TAG, "onAnimationEnd: Ended Animation ")
-                            locationIc.show()
-                            locationIc.startAnimation(botTopAnim)
-                            profileImage.hide()
                         }
 
                         override fun onAnimationRepeat(animation: Animation?) {}
@@ -67,15 +63,14 @@ class DetailAdaptorViewHolder(
                 } else if (seen1 == true && seen2 == null && count == 0) {
                     seen2 = true
                     seen1 = null
-                    profileImage.show()
                     sendImage.startAnimation(popExitAnim)
-                    profileImage.startAnimation(popEnterAnim)
-                    popEnterAnim.setAnimationListener(object : Animation.AnimationListener {
+                    popExitAnim.setAnimationListener(object : Animation.AnimationListener {
                         override fun onAnimationStart(animation: Animation?) {
+                            locationIc.hide()
                             myTextEdit.updateLayoutParams<ConstraintLayout.LayoutParams> {
                                 bottomToBottom = binding.textViewRoot.id
                             }
-                            locationIc.hide()
+                            profileImage.show()
                         }
 
                         override fun onAnimationEnd(animation: Animation?) {
