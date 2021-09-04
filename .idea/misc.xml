@@ -10,6 +10,7 @@
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_like.xml" value="0.18888888888888888" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_location.xml" value="0.18888888888888888" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_search.xml" value="0.18888888888888888" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_send.xml" value="0.24375" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_star.xml" value="0.18888888888888888" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_three_dot.xml" value="0.24375" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/drawable/ic_voice.xml" value="0.2390194075587334" />
@@ -19,9 +20,11 @@
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/custom_dialog_fragment.xml" value="0.4" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/custom_dialog_fragragment.xml" value="0.4" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_detail_fragment.xml" value="0.10822401614530777" />
-        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_detail_layout.xml" value="0.2" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_detail_layout.xml" value="0.4" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_item.xml" value="0.264" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/query_item_fragment.xml" value="0.4" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/secen1.xml" value="0.4" />
+        <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/secen2.xml" value="0.1621376811594203" />
         <entry key="..\:/Androidprojects/Cargo/app/src/main/res/layout/shimmer_layout.xml" value="0.264" />
       </map>
     </option>

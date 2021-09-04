@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -21,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/text_view_root"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/orange"
@@ -45,7 +47,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
@@ -56,7 +59,8 @@
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/voice_image"
@@ -67,8 +71,9 @@
                 android:visibility="gone"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintRight_toLeftOf="@id/send_image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
 
                 <ImageView
                     android:id="@+id/roundedImageView"
@@ -76,7 +81,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:contentDescription="@string/pro_pic"
-                    android:scaleType="fitXY"
+                    android:scaleType="center"
                     app:srcCompat="@drawable/ic_voice" />
             </androidx.cardview.widget.CardView>
 
@@ -84,7 +89,7 @@
                 android:id="@+id/myTextEdit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_marginStart="9dp"
                 android:background="@null"
                 android:fontFamily="@font/montserrat"
                 android:hint="@string/comment_text"
@@ -94,7 +99,51 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/profile_image"
                 app:layout_constraintRight_toLeftOf="@id/voice_image"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/send_image"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/roundedSendView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:contentDescription="@string/pro_pic"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_send" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/location_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:drawablePadding="2dp"
+                android:gravity="center"
+                android:text="@string/curr_location"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:drawableTint="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/myTextEdit" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
