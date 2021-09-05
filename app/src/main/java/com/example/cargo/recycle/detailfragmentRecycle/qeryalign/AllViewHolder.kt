@@ -32,6 +32,9 @@ sealed class AllViewHolder(viewBinding: ViewBinding) :
                 binding.closeBtnClick.setOnClickListener {
                     exit()
                 }
+                binding.closeBtn.setOnClickListener {
+                    exit()
+                }
                 binding.queryImg.setImageBitmap(query.bitmap)
             } else {
                 binding.queryImg.hide()

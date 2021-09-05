@@ -7,16 +7,10 @@
     android:background="@color/app_color"
     tools:context=".ui.QueryDetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/drag_"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/selected_Recycle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
